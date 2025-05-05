@@ -1,0 +1,7 @@
+05/05/25 Kick off
+
+
+
+Objectifs :
+Installer love2D pour windows
+Configurer Visual Studio Code

@@ -1,0 +1,12 @@
+05/05/25 : Accompagnement
+
+david@gamecodeur.fr
+
+Installation de visual studio code avec les extensions suivante :
+- Langue française
+- Indent Rainbow
+- Live Sass Compiler (pas utile pour le projet mais pour mes dev web)
+- Live Server (pas utile pour le projet mais pour mes dev web)
+- Material Icon Theme
+- Rainbow CSV (pas utile pour le projet mais pour mes dev web)
+- vscode-lua (trixnz)
