@@ -1,0 +1,12 @@
+Faire le projet version GameCodeur
+Faire le projet version Moi
+
+
+
+Ajouter : 
+[ ] Passer d'un niveau à un autre
+[ ] Password entre les niveau
+[ ] Sauvegarde progession
+[ ] Génération procédurale ?
+[ ] Function screenshake
+[ ] Konamicode ?
