@@ -2,7 +2,7 @@
 
 david@gamecodeur.fr
 
-Installation de visual studio code avec les extensions suivante :
+Installation de visual studio code avec les extensions suivantse :
 - Langue française
 - Indent Rainbow
 - Live Sass Compiler (pas utile pour le projet mais pour mes dev web)
@@ -10,3 +10,30 @@ Installation de visual studio code avec les extensions suivante :
 - Material Icon Theme
 - Rainbow CSV (pas utile pour le projet mais pour mes dev web)
 - vscode-lua (trixnz)
+- Love2D Launcher de Menerv
+
+
+07/05/25
+Lecture du livre "le kit de demarrage du programmeur de jeux-video"
+Installation des extensions visual studio code suivantes :
+- Local Lua Debugger Tom Blind
+
+12/05/25
+Continuer la lecture du livre "le kit de demarrage du programmeur de jeux-video"
+Tester code luan en ligne : https://www.tutorialspoint.com/compilers/online-lua-compiler.htm
+
+Rappel :
+- lancer love2D : touche F5 ou Ctrl+B
+- Bien penser à utiliser le dt (deltaTime) pour les calculs de vitesses (multipliez toujours par dt toute valeur liée à un déplacement ou à un calcul de temps.)
+- Changer l'origine d'une image : love.graphics.draw(img, x, y, rotation, 1, 1, ox, oy) ou ox et oy sont les nouvelle coordonnées
+- Cours sur le scrolling infini : https://www.youtube.com/watch?v=GgmNZCbFHJk
+
+
+Début du codage
+- Création du dossier dungeon
+- Intégration du main.lua (titre projet "Dungeon Tour")
+- Ajout de la fonction mousepressed par rapport au squelette de base
+- Début des cours également
+- Création de modules basique (sceneDungeon, sceneEditor et dungeon)
+- Ajout d'une variable modeDev dans le main pour les outils et print utilisé lors du dev
+- Intégration d'une map généré par chat GPT

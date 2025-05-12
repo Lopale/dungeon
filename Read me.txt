@@ -5,6 +5,7 @@ Faire le projet version Moi
 
 Ajouter : 
 [ ] Passer d'un niveau à un autre
+[ ] Récupérer automatiquement les dimensions d'un niveau
 [ ] Password entre les niveau
 [ ] Sauvegarde progession
 [ ] Génération procédurale ?
