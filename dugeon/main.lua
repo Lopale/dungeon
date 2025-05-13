@@ -40,6 +40,7 @@ function love.update(dt)
 end
 
 function love.draw()
+    love.graphics.scale(2,2) -- on agrandit par 2 la taille des éléments affichés
     sceneCourante.draw()
 end
 
