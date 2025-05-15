@@ -23,10 +23,15 @@ local imgEst = love.graphics.newImage("img/est.png")
 local imgSud = love.graphics.newImage("img/sud.png")
 local imgOuest = love.graphics.newImage("img/ouest.png")
 
+local CDV = {} -- Champs de vision du joueur pour la 3D, sur trois cases par trois
+
+
 function dungeon.changePositionPlayer(x,y, direction)
     dungeon.playerX = x
     dungeon.playerY = y
     dungeon.playerDirection = direction
+
+    calculCDV() -- On recalcul le champs de vision à chaque déplacement
 end
 
 function dungeon.nextLevel()
@@ -84,6 +89,133 @@ end
 -- test ce que contient la case sur laquelle on envoie les coordonnées
 function dungeon.case(ligne, colonne)
     return map[ligne][colonne]
+end
+
+-- Vérifie les données du champs de vision pour ne pas sortir du tableau (v pour vision)
+function changeCDV(vLigne, vColonne, mapLigne, mapColonne)
+    if mapLigne > 0 and mapColonne > 0 and mapColonne <= dungeon.height and mapColonne <= dungeon.width then
+        CDV[vLigne][vColonne]= map[mapLigne][mapColonne]
+    end
+end
+
+
+
+-- Calcul du champs de vision
+function calculCDV()
+    CDV = {} -- on reset le champs de vision
+    for ligne=1,3 do
+        CDV[ligne] = {0,0,0}    -- On initialise les 3 ligne par des 0 
+                                -- donc CDV = {
+                                --              {0,0,0},
+                                --              {0,0,0},
+                                --              {0,0,0},                
+                                --             }
+    end
+
+    local x = dungeon.playerX -- On récupère la position du joueur
+    local y = dungeon.playerY
+
+    -- On calcul pour chacune des quatre direction en commençant par le nord
+    -- NORD
+    if dungeon.playerDirection == dungeon.nord then
+        changeCDV(1,1,y,x-1)   -- Ligne 1 colonne 1
+        changeCDV(1,2,y,x)     -- Ligne 1 colonne 2
+        changeCDV(1,3,y,x+1)   -- Ligne 1 colonne 3
+
+        changeCDV(2,1,y-1,x-1) -- Ligne 2 colonne 1
+        changeCDV(2,2,y-1,x)   -- Ligne 2 colonne 2
+        changeCDV(2,3,y-1,x+1) -- Ligne 2 colonne 3
+
+        changeCDV(3,1,y-2,x-1) -- Ligne 3 colonne 1
+        changeCDV(3,2,y-2,x)   -- Ligne 3 colonne 2
+        changeCDV(3,3,y-2,x+1) -- Ligne 3 colonne 3
+
+
+        -- Juste pour vérifier la table dans la console
+        print('___')
+        for ligne=1,3 do
+            local printCDV = CDV[ligne][1]..CDV[ligne][2]..CDV[ligne][3]
+            print(printCDV)
+        end
+        print('___')
+    end
+
+
+    -- EST
+    if dungeon.playerDirection == dungeon.est then
+        changeCDV(1,1,y-1,x)   -- Ligne 1 colonne 1
+        changeCDV(1,2,y,x)     -- Ligne 1 colonne 2
+        changeCDV(1,3,y+1,x)   -- Ligne 1 colonne 3
+
+        changeCDV(2,1,y-1,x+1) -- Ligne 2 colonne 1
+        changeCDV(2,2,y,x+1)   -- Ligne 2 colonne 2
+        changeCDV(2,3,y+1,x+1) -- Ligne 2 colonne 3
+
+        changeCDV(3,1,y-1,x+2) -- Ligne 3 colonne 1
+        changeCDV(3,2,y,x+2)   -- Ligne 3 colonne 2
+        changeCDV(3,3,y+1,x+2) -- Ligne 3 colonne 3
+
+
+        -- Juste pour vérifier la table dans la console
+        print('___')
+        for ligne=1,3 do
+            local printCDV = CDV[ligne][1]..CDV[ligne][2]..CDV[ligne][3]
+            print(printCDV)
+        end
+        print('___')
+    end
+
+    -- SUD
+    if dungeon.playerDirection == dungeon.sud then
+        changeCDV(1,1,y,x+1)   -- Ligne 1 colonne 1
+        changeCDV(1,2,y,x)     -- Ligne 1 colonne 2
+        changeCDV(1,3,y,x-1)   -- Ligne 1 colonne 3
+
+        changeCDV(2,1,y+1,x+1) -- Ligne 2 colonne 1
+        changeCDV(2,2,y+1,x)   -- Ligne 2 colonne 2
+        changeCDV(2,3,y+1,x-1) -- Ligne 2 colonne 3
+
+        changeCDV(3,1,y+2,x+1) -- Ligne 3 colonne 1
+        changeCDV(3,2,y+2,x)   -- Ligne 3 colonne 2
+        changeCDV(3,3,y+2,x-1) -- Ligne 3 colonne 3
+
+
+        -- Juste pour vérifier la table dans la console
+        print('___')
+        for ligne=1,3 do
+            local printCDV = CDV[ligne][1]..CDV[ligne][2]..CDV[ligne][3]
+            print(printCDV)
+        end
+        print('___')
+    end
+
+
+    -- OUEST
+    if dungeon.playerDirection == dungeon.ouest then
+        changeCDV(1,1,y+1,x)   -- Ligne 1 colonne 1
+        changeCDV(1,2,y,x)     -- Ligne 1 colonne 2
+        changeCDV(1,3,y-1,x)   -- Ligne 1 colonne 3
+
+        changeCDV(2,1,y+1,x-1) -- Ligne 2 colonne 1
+        changeCDV(2,2,y,x-1)   -- Ligne 2 colonne 2
+        changeCDV(2,3,y-1,x-1) -- Ligne 2 colonne 3
+
+        changeCDV(3,1,y+1,x-2) -- Ligne 3 colonne 1
+        changeCDV(3,2,y,x-2)   -- Ligne 3 colonne 2
+        changeCDV(3,3,y-1,x-2) -- Ligne 3 colonne 3
+
+
+        -- Juste pour vérifier la table dans la console
+        print('___')
+        for ligne=1,3 do
+            local printCDV = CDV[ligne][1]..CDV[ligne][2]..CDV[ligne][3]
+            print(printCDV)
+        end
+        print('___')
+    end
+
+
+
 end
 
 function draw2D() -- fonction de dessin en 2D

@@ -45,3 +45,6 @@ Début du codage
 - Remplacement des flèches par un personnage
 - Déplacement du personnage
 - Création d'une fonction nextLevel pour le moment où l'on arrive sur la case de fin (pour le moment on affiche juste "Finish" dans la console)
+
+15/05/25
+-- Ajout du calcul de champs de vision du joueur, afficher dans la console pour le moment
