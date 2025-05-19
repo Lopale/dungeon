@@ -11,3 +11,4 @@ Ajouter :
 [ ] Génération procédurale ?
 [ ] Function screenshake
 [ ] Konamicode ?
+[ ] Brouillard de guerre

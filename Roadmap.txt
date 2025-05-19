@@ -1,4 +1,4 @@
-05/05/25 : Accompagnement
+05/05/25 : Accompagnement (kickoff) 0/4
 
 david@gamecodeur.fr
 
@@ -48,3 +48,12 @@ Début du codage
 
 15/05/25
 -- Ajout du calcul de champs de vision du joueur, afficher dans la console pour le moment
+
+
+19/05/25 : Accompagnement 1/4
+Présentation d'un algo de génération aléatoire
+Création d'une minimap
+Intégration d'un brouillard de guerre
+
+
+https://www.gamecodeur.fr/le-projet-gamecodeur-du-moment-dungeon-crawler-de-gilles/

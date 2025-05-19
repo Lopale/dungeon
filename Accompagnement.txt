@@ -5,3 +5,19 @@
 Objectifs :
 Installer love2D pour windows
 Configurer Visual Studio Code
+
+
+19/05/25 Mastermind 01
+Voir replay nuclear stone pour génération de donjon aléatoire => https://school.gamecodeur.fr/view/courses/stage-nuclear (149€)
+https://www.gamecodeur.fr/liste-ateliers/atelier-algorithme-dfs-labyrinthe/ => ça j'y ai accès
+ou alors
+https://rosettacode.org/wiki/Maze_generation#Lua
+
+affichage 2D + 3D (ma question) 33min
+Dupliquer fonctiuon draw2D en drawMiniMap et modifier les tailles
+Puis dans scene donjon (retirer dt) ajouter l'appel de drawMiniMap 
+et dans donjonLlua ajouter l'appel à minimap
+
+Brouillard de guerre => Bien comme j'avais en tête
+2eme calque, même dimension que la map
+Tout le monde a 0, puis je passe a 1 au dépalcement
