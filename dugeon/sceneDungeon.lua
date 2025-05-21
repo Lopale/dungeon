@@ -2,6 +2,8 @@ local sceneDungeon = {} -- On créer le module, le nom du modul n'a pas à être
 
 local dungeon = require("dungeon") -- On charge le module dungeon (Pas besoin d'indiquer l'extension)
 
+
+
 function sceneDungeon.load()
     print("sceneDungeon.load()")
     dungeon.load()
@@ -15,7 +17,7 @@ end
 
 function sceneDungeon.draw()
     -- love.graphics.print("Scene du donjon", 120,150) -- Ecrit à 120 px en x et 150px en Y
-    dungeon.draw(dt,"2D")
+    dungeon.draw("3D")
 end
 
 function sceneDungeon.keypressed(key)
@@ -66,9 +68,16 @@ function sceneDungeon.keypressed(key)
         end
     end
     if key == "down" then
+        print("j'affiche la mini map")
     end
 
     dungeon.changePositionPlayer(x,y,direction)
+
+    if modeDev == true then
+        if(key)== "r" then -- r pour reveal
+            dungeon.liftFog("all") -- on retire tout le brouillard
+        end
+    end
 end
 
 function sceneDungeon.mousepressed(x, y, button, istouch)

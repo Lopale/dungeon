@@ -57,3 +57,12 @@ Intégration d'un brouillard de guerre
 
 
 https://www.gamecodeur.fr/le-projet-gamecodeur-du-moment-dungeon-crawler-de-gilles/
+
+20/05/25
+Ajout du brouillard de guerre, ainsi que le fait de totalement le retirer (en mode dev) en appuyant sur "r"
+Création du "mode d'emploi" format txt pour les touches (à refaire dans un autre format plus tard)
+Ajout de la vue 3D
+
+21/05/25
+Ajout de la minimap sur le côté de la vue donjon 3D
+Ajout de l'editeur de map version game codeur

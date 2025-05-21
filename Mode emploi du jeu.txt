@@ -1,0 +1,13 @@
+Les touches
+
+En jeu
+droite => tourne le personnage dans le sens horaire
+gauche => tourne le personnage dans le sens antihoraire
+haut => avancer
+bas => Afficher/retirer la minimap
+
+En mode Dev
+
+r => Retire tout le brouillard de guerre de la map
+m => affiche la map du donjon
+d => Affiche le donjon (le jeu)

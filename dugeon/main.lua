@@ -9,7 +9,7 @@ io.stdout:setvbuf("no")
 -- Titre de la fenêtre
 title = "Dungeon tour"
 
-local modeDev = true -- Me permet d'avoir des outils qui ne sont accèssible que pendant le DEV
+modeDev = true -- Me permet d'avoir des outils qui ne sont accèssible que pendant le DEV
 
 local sceneDungeon = require("sceneDungeon") -- On charge le module sceneDungeon (Pas besoin d'indiquer l'extension)
 local sceneEditor = require("sceneEditor") -- On charge le module sceneEditor (Pas besoin d'indiquer l'extension)
@@ -26,6 +26,7 @@ function changeScene(key) -- Changer de scene au clavier le temps du dev vers l'
         if(key)== "d" then -- d pour dungeon
             sceneCourante = sceneDungeon
         end
+       
         print("key :",key)
     end
 end

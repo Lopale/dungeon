@@ -11,4 +11,6 @@ Ajouter :
 [ ] Génération procédurale ?
 [ ] Function screenshake
 [ ] Konamicode ?
-[ ] Brouillard de guerre
+[X] Brouillard de guerre
+[ ] Timer d'affichage de la mini map
+[ ] Augmenter profondeur ?
